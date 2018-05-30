@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+  font-family: monospace;
+  background-color: black;
+  color: green;
+  text-shadow: 1px 1px 1px white;
+}
+
+.heading {
+  padding: 70px;
+  font-size: 44px;
+}
+
+.user {
+  background-color: lightgray;
+  color: green;
+  text-shadow: 1px 1px 1px black;
+  width: 400px;
+  margin: 10px;
+  font-size: 26px;
+  -moz-box-shadow: 2px 2px 2px 2px green;
+  -webkit-box-shadow: 2px 2px 2px 2px green;
+  box-shadow: 2px 2px 2px 2px green;
+  border: black;
+}
+
+.user:hover {
+  text-shadow: 2px 2px 2px black;
+}
+
+.display {
+  color: white;
+}
+
+.footer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: green;
+  text-decoration: none;
+}
+
+.footer:hover {
+  text-shadow: 2px 2px 2px white;
+}
