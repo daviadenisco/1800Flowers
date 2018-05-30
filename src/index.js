@@ -9,10 +9,10 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <div>
-  <Heading />
-  <App />
-  <Display />
-  <Footer />
+    <Heading />
+    <App />
+    <Display />
+    <Footer />
   </div>
   , document.getElementById('root'));
 

@@ -29,7 +29,7 @@ class App extends Component {
     let { user } = this.state;
 
     for (let i = 0; i < json.length; i++) {
-      if (json[i].first == this.first) {
+      if (parseInt(json[i].id) === parseInt(this.id)) {
         user = json[i];
       }
     }
@@ -43,9 +43,10 @@ class App extends Component {
 
   }
 
-  handleClick() {
-    console.log("handleClick working")
-    this.returnUserInfo();
+  handleClick(e) {
+    console.log("handleClick function running")
+    console.log("targeting:", e.target.id);
+    this.returnUserInfo(e.target.id);
   }
 
   render() {
@@ -53,7 +54,7 @@ class App extends Component {
     return this.state.json.map((user, index) =>
 
       <div key={user.index}>
-        <Button className="user" onClick={this.handleClick}>{user.first} {user.last}</Button>
+        <Button className="user" id={user.id} onClick={this.handleClick}>{user.first} {user.last}</Button>
       </div>
     );
   }
