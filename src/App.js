@@ -24,7 +24,7 @@ class App extends Component {
 
   }
 
-  returnUserInfo() {
+  returnUserInfo(id) {
 
     let { user } = this.state;
 
