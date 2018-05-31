@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+var json = require('./json.js').json;
 
 class Display extends Component {
-
+  constructor(props) {
+    super(props);
+  }
   render() {
-
-    return (
-      <div>
-        <h1 className='welcome'>{this.props.user}</h1>
-      </div>
-
-    );
+    return "display component"
   }
 }
 
