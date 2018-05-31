@@ -28,7 +28,7 @@ class App extends Component {
 
   returnUserInfo(id) {
     const userSelected = this.id;
-    console.log("userSelected", this.userSelected);
+    console.log("1. userSelected", this.userSelected);
 
     const { user } = this.state.json;
 
@@ -46,14 +46,14 @@ class App extends Component {
           location: json[i].location,
           description: json[i].description
         }
-        console.log("json: ", json);
-        console.log("this.state.user: ", this.state.user)
-        console.log("this.state.user.first: ", this.state.user.first)
+        console.log("2. json: ", json);
+        console.log("3. this.state.user: ", this.state.user)
+        console.log("4. this.state.user.first: ", this.state.user.first)
 
       }
     }
 
-    console.log("id", id);
+    console.log("5. id", id);
     this.setState({
       id: id,
       userSelected: userSelected,
@@ -72,7 +72,7 @@ class App extends Component {
     // console.log("targeting:", e.target.id);
     this.id = e.target.id;
 
-    console.log(this.id)
+    console.log("6. this.id: ", this.id)
     this.returnUserInfo(e.target.id);
 
   }
