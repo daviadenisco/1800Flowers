@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   returnUserInfo(id) {
-    const userSelected = true;
+    const userSelected = id;
     const { user } = this.state.json;
 
     // iterate across json
@@ -70,7 +70,7 @@ class App extends Component {
     // console.log("targeting:", e.target.id);
     console.log("userSelected", this.userSelected);
     this.id = e.target.id;
-    this.userSelected = false;
+    this.userSelected = this.id;
 
     console.log(this.id)
     this.returnUserInfo(e.target.id);
@@ -90,7 +90,7 @@ class App extends Component {
       <div key={user.index}>
         <Button className="user" id={user.id} onClick={this.handleClick}>{user.first} {user.last}</Button>
       </div>
-      {this.state.userSelected ? (
+      {this.state.userSelected === this.state.id ? (
         <div>
           <p>{user.first} {user.last}</p>
           <p>{user.age}</p>
