@@ -12,7 +12,7 @@ class App extends Component {
       json: json,
       user: null,
       id: null,
-      userSelected: false
+      userSelected: 0
     }
 
     // this.getUserInfo = this.getUserInfo.bind(this)
