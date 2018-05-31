@@ -68,8 +68,7 @@ class App extends Component {
   // }
 
   handleClick(e) {
-    // console.log("handleClick function running")
-    // console.log("targeting:", e.target.id);
+    e.preventDefault();
     this.id = e.target.id;
 
     console.log("6. this.id: ", this.id)
