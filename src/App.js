@@ -85,7 +85,7 @@ class App extends Component {
       <div key={user.index}>
         <Button className="user" id={user.id} onClick={this.handleClick}>{user.first} {user.last}</Button>
       </div>
-      {this.state.userSelected === this.state.id ? (
+      {this.state.userSelected ? (
         <div className="display">
           <p>{user.first} {user.last}</p>
           <p>{user.age}</p>
