@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import './App.css';
@@ -28,21 +29,18 @@ class App extends Component {
   returnUserInfo(id) {
     const userSelected = this.state.userSelected;
     console.log("1. userSelected", userSelected);
-    const id2 = 5;
 
     // iterate across json
     for (let i = 0; i < json.length; i++) {
       // if the id matches the id
       if (json[i].id === parseInt(id)) {
         this.state.user = json[i];
-        // const currentUser = this.state.user;
+        const currentUser = this.state.user;
         console.log("5. id", id);
         this.setState({
-          id: id2,
           // user: user,
           userSelected: userSelected
         })
-        console.log("TRY id2", this.state.id)
         console.log("2. json obj: ", this.state.user);
         console.log("3. userSelected: ", this.state.userSelected)
 
@@ -69,8 +67,9 @@ class App extends Component {
     this.returnUserInfo(e.target.id);
 
     this.setState({
-       userSelected: e.target.id})
-       console.log("7. userSelected", this.userSelected);
+       userSelected: true
+    })
+       // console.log("7. userSelected", this.userSelected);
   }
 
   // handleClick() {
