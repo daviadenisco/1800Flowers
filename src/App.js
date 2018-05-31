@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import './App.css';
 import Display from './Display';
 var json = require('./json.js').json;
+var element = null;
 
 class App extends Component {
   constructor() {
@@ -29,11 +30,24 @@ class App extends Component {
     const userSelected = true;
     const { user } = this.state.json;
 
+    // iterate across json
     for (let i = 0; i < json.length; i++) {
+      // if the id matches the id
       if (json[i].id === parseInt(id)) {
+        // set id to that number
         this.state.id = json[i];
-        this.state.user = json[i].user;
-        // console.log(this.state.user)
+        // set user to that user's info
+        this.state.user = {
+          first: json[i].first,
+          last: json[i].last,
+          age: json[i].age,
+          location: json[i].location,
+          description: json[i].description
+        }
+        console.log("json: ", json);
+        console.log("this.state.user: ", this.state.user)
+        console.log("this.state.user.first: ", this.state.user.first)
+
       }
     }
 
@@ -54,9 +68,10 @@ class App extends Component {
   handleClick(e) {
     // console.log("handleClick function running")
     // console.log("targeting:", e.target.id);
-    this.userSelected = true;
     console.log("userSelected", this.userSelected);
     this.id = e.target.id;
+    this.userSelected = false;
+
     console.log(this.id)
     this.returnUserInfo(e.target.id);
 
@@ -77,7 +92,10 @@ class App extends Component {
       </div>
       {this.state.userSelected ? (
         <div>
-          <Display />
+          <p>{user.first} {user.last}</p>
+          <p>{user.age}</p>
+          <p>{user.location}</p>
+          <p>{user.description}</p>
         </div>
       ) : null}
       </div>
