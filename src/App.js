@@ -10,46 +10,52 @@ class App extends Component {
     super();
     this.state = {
       json: json,
-      user: null,
-      userSelected: false
+      userSelected: false,
+      user: null
     }
 
     // this.getUserInfo = this.getUserInfo.bind(this)
     this.handleClick = this.handleClick.bind(this)
   };
 
-  getUserInfo() {
-
-    this.setState({
-      json: json,
-    })
-  }
+  // getUserInfo() {
+  //
+  //   this.setState({
+  //     json: json,
+  //   })
+  // }
 
   returnUserInfo(id) {
-    const userSelected = true;
-    console.log("1. userSelected", this.selected);
+    const userSelected = this.state.userSelected;
+    console.log("1. userSelected", userSelected);
+    const id2 = 5;
 
     // iterate across json
     for (let i = 0; i < json.length; i++) {
       // if the id matches the id
       if (json[i].id === parseInt(id)) {
-        const { user } = json[i];
+        this.state.user = json[i];
+        // const currentUser = this.state.user;
+        console.log("5. id", id);
+        this.setState({
+          id: id2,
+          // user: user,
+          userSelected: userSelected
+        })
+        console.log("TRY id2", this.state.id)
+        console.log("2. json obj: ", this.state.user);
+        console.log("3. userSelected: ", this.state.userSelected)
 
-        console.log("2. json obj: ", user);
-        // console.log("3. testUser: ", this.state.testUser)
-        // console.log("4. first name: ", this.state.user.first)
+        console.log("4. first name: ", this.state.user.first)
 
       }
-    }
-
-    console.log("5. id", id);
-    this.setState({
-      id: id,
-      userSelected: id,
-    })
 
     }
 
+
+
+    }
+  //
   // componentWillMount() {
   //
   //   this.getUserInfo();
