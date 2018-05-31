@@ -5,8 +5,7 @@ let json = [
     last: "Roberts",
     age: 51,
     location: "Chicago, IL",
-    description: "John is a retired YouTuber",
-    foo: false
+    description: "John is a retired YouTuber"
   },
   {
     id: 2,
@@ -14,8 +13,7 @@ let json = [
     last: "Waters",
     age: 27,
     location: "Phoenix, AZ",
-    description: "Frita loves the desert, cheese, and turtles.",
-    foo: false
+    description: "Frita loves the desert, cheese, and turtles."
   },
   {
     id: 3,
@@ -23,8 +21,7 @@ let json = [
     last: "Simpson",
     age: 24,
     location: "Springfield, IL",
-    description: "Bart skateboards everywhere.",
-    foo: false
+    description: "Bart skateboards everywhere."
   }
 ]
 

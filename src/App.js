@@ -11,8 +11,7 @@ class App extends Component {
     this.state = {
       json: json,
       user: null,
-      id: null,
-      userSelected: 0
+      userSelected: false
     }
 
     // this.getUserInfo = this.getUserInfo.bind(this)
@@ -27,28 +26,18 @@ class App extends Component {
   }
 
   returnUserInfo(id) {
-    const userSelected = this.id;
-    console.log("1. userSelected", this.userSelected);
-
-    const { user } = this.state.json;
+    const userSelected = true;
+    console.log("1. userSelected", this.selected);
 
     // iterate across json
     for (let i = 0; i < json.length; i++) {
       // if the id matches the id
       if (json[i].id === parseInt(id)) {
-        // set id to that number
-        this.state.id = json[i];
-        // set user to that user's info
-        this.state.user = {
-          first: json[i].first,
-          last: json[i].last,
-          age: json[i].age,
-          location: json[i].location,
-          description: json[i].description
-        }
-        console.log("2. json: ", json);
-        console.log("3. this.state.user: ", this.state.user)
-        console.log("4. this.state.user.first: ", this.state.user.first)
+        const { user } = json[i];
+
+        console.log("2. json obj: ", user);
+        // console.log("3. testUser: ", this.state.testUser)
+        // console.log("4. first name: ", this.state.user.first)
 
       }
     }
@@ -56,8 +45,7 @@ class App extends Component {
     console.log("5. id", id);
     this.setState({
       id: id,
-      userSelected: userSelected,
-      user: user
+      userSelected: id,
     })
 
     }
@@ -74,6 +62,9 @@ class App extends Component {
     console.log("6. this.id: ", this.id)
     this.returnUserInfo(e.target.id);
 
+    this.setState({
+       userSelected: e.target.id})
+       console.log("7. userSelected", this.userSelected);
   }
 
   // handleClick() {
