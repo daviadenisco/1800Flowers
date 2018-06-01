@@ -1,44 +1,31 @@
 
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import './App.css';
 import Display from './Display';
+import './App.css';
 var json = require('./json.js').json;
-var element = null;
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       json: json,
       userSelected: false,
-      user: null
+      user: ""
     }
-
-    // this.getUserInfo = this.getUserInfo.bind(this)
     this.handleClick = this.handleClick.bind(this)
   };
-
-  // getUserInfo() {
-  //
-  //   this.setState({
-  //     json: json,
-  //   })
-  // }
 
   returnUserInfo(id) {
     const userSelected = this.state.userSelected;
     console.log("1. userSelected", userSelected);
 
-    // iterate across json
     for (let i = 0; i < json.length; i++) {
-      // if the id matches the id
       if (json[i].id === parseInt(id)) {
         this.state.user = json[i];
         const currentUser = this.state.user;
         console.log("5. id", id);
         this.setState({
-          // user: user,
           userSelected: userSelected
         })
         console.log("2. json obj: ", this.state.user);
@@ -49,34 +36,17 @@ class App extends Component {
       }
 
     }
-
-
-
-    }
-  //
-  // componentWillMount() {
-  //
-  //   this.getUserInfo();
-  // }
+  }
 
   handleClick(e) {
-    e.preventDefault();
     this.id = e.target.id;
 
-    console.log("6. this.id: ", this.id)
     this.returnUserInfo(e.target.id);
 
     this.setState({
        userSelected: true
     })
-       // console.log("7. userSelected", this.userSelected);
   }
-
-  // handleClick() {
-  //   this.setState(prevState => ({
-  //     userSelected: !prevState.userSelected
-  //   }));
-  // }
 
   render() {
 
@@ -87,10 +57,10 @@ class App extends Component {
       </div>
       {this.state.userSelected ? (
         <div className="display">
-          <p>{user.first} {user.last}</p>
-          <p>{user.age}</p>
-          <p>{user.location}</p>
-          <p>{user.description}</p>
+          <p>{this.state.user.first} {this.state.user.last}</p>
+          <p>{this.state.user.age}</p>
+          <p>{this.state.user.location}</p>
+          <p>{this.state.user.description}</p>
         </div>
       ) : null}
       </div>
