@@ -46,3 +46,7 @@ body {
 .footer:hover {
   text-shadow: 2px 2px 2px white;
 }
+
+.hidden {
+  display: none;
+}

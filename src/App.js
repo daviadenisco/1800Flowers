@@ -1,8 +1,10 @@
-
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import Display from './Display';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import './App.css';
+
+configure({ adapter: new Adapter() });
 var json = require('./json.js').json;
 
 class App extends Component {
@@ -10,7 +12,6 @@ class App extends Component {
     super(props);
     this.state = {
       json: json,
-      userSelected: false,
       user: false
     }
     this.handleClick = this.handleClick.bind(this)
@@ -40,14 +41,12 @@ class App extends Component {
         <div key={user.index}>
           <Button className="user" id={user.id} onClick={this.handleClick}>{user.first} {user.last}</Button>
         </div>
-        { this.showInfo(user) ? (
-          <div className="display">
+          <div className={"display " + (this.showInfo(user) ? "" : "hidden")}>
             <p>{this.state.user.first} {this.state.user.last}</p>
             <p>{this.state.user.age}</p>
             <p>{this.state.user.location}</p>
             <p>{this.state.user.description}</p>
           </div>
-        ) : null}
       </div>
     );
   }
