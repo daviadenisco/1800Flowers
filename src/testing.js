@@ -7,7 +7,7 @@ var json = require('./json.js').json;
 
 configure({ adapter: new Adapter() });
 
-const instance = userDataStore.getElement().props;
+// const instance = userDataStore.getElement().props;
 
 describe("<App />", () => {
   let userDataStore = mount(<App user={{ first: 'test user' }} />);
