@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import '../App/App.css';
 import Display from './Display';
+import UserNames from './UserNames';
 
 var json = require('../data/json.js').json;
 
@@ -12,7 +13,6 @@ class GetData extends Component {
       json: json,
       user: false
     }
-    this.handleClick = this.handleClick.bind(this)
   };
 
   retreiveUserInfo(id) {
@@ -25,7 +25,7 @@ class GetData extends Component {
     }
   }
 
-  handleClick(e) {
+  handleClick = (e) => {
     this.retreiveUserInfo(e.target.id);
   }
 
@@ -34,14 +34,10 @@ class GetData extends Component {
   }
 
   render() {
-    return this.state.json.map((user, index) =>
+    return (
       <div>
-        <div key={user.index}>
-          <Button className="user" id={user.id} onClick={this.handleClick}>{user.first} {user.last}</Button>
-        </div>
-        <div className={"display " + (this.showInfo(user) ? "" : "hidden")}>
-          <Display user={this.state.user} />
-        </div>
+        <UserNames users={this.state.json} />
+        <Display user={this.state.user} />
       </div>
     );
   }

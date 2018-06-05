@@ -1,15 +1,18 @@
-export const SET_STACK = 'SET_STACK';
+export const LOAD_USERS = 'LOAD_USERS';
+export const SET_USER = 'SET_USER';
 
-export function setStack(stack) {
-  // const action = {
-  //   type: 'SET_STACK',
-  //   stack: stack
-  // };
-
-  // return action;
-
+function loadUsers(users) {
   return {
-    type: SET_STACK,
-    stack: stack
+    type: LOAD_USERS,
+    users
   };
 };
+
+const setUser = (user) => {
+  return {
+    type: SET_USER,
+    user
+  };
+}
+
+export { loadUsers, LOAD_USERS, setUser, SET_USER };
