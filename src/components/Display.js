@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../App/App.css';
+//do imports
+
 
 class Display extends Component {
 
@@ -15,4 +17,8 @@ class Display extends Component {
     );
   }
 }
+
+// map state to mapStateToProps
+
+// connect to the store
 export default Display;

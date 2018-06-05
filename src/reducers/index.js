@@ -1,12 +1,12 @@
 import { LOAD_USERS, SET_USER } from '../actions';
 import { combineReducers } from 'redux';
 
-function users(state = {}, action) {
+function users(state = [], action) {
   switch (action.type) {
     case "LOAD_USERS":
       return action.users;
       default:
-        return state;
+        return {...state};
   }
 }
 
@@ -15,7 +15,7 @@ const info = (state = {}, action) => {
     case "SET_USER":
       return action.user;
       default:
-        return state;
+        return {...state};
   }
 }
 

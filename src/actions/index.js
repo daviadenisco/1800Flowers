@@ -1,5 +1,5 @@
-export const LOAD_USERS = 'LOAD_USERS';
-export const SET_USER = 'SET_USER';
+const LOAD_USERS = 'LOAD_USERS';
+const SET_USER = 'SET_USER';
 
 function loadUsers(users) {
   return {
