@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import '../App/App.css';
 
-class Heading extends Component {
-
-  render() {
+const Heading = () => {
 
     return (
       <div>
         <h1 className="heading">Welcome to the Data Store</h1>
       </div>
     );
-  }
 }
 export default Heading;
