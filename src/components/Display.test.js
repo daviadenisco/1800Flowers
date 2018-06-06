@@ -1,21 +1,24 @@
 import React from 'react';
 import Enzyme from 'enzyme';
-import { shallow } from 'enzyme';
-import Display from './Display';
+import { configure, mount, shallow } from 'enzyme';
+import ConnectedDisplay, { Display } from './Display';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
+const props = {
+  user: {
+    id: 0,
+    first: "John",
+    age: 51
+  }
+};
+
 describe('Display', () => {
-  let display = mount(<Display />);
+  let display = shallow(<Display {...props} />);
 
-  it('renders', () => {
-    expect(display.find('.location').at(0).text()).toEqual('Chicago, IL');
+  it("should render first name", () => {
+    console.log(display.debug());
+    // expect(display.find('Connect(Display)').exists()).toBe(true);
   });
-
-  // it('renders without crashing', () => {
-  //   const div = document.createElement('div');
-  //   ReactDOM.render(<GetData />, div);
-  //   ReactDOM.unmountComponentAtNode(div);
-  // });
 });

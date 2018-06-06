@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() });
 describe('Footer', () => {
   let footer = mount(<Footer />);
 
-  it('renders the footer text', () => {
+  it('renders the footer link', () => {
     // console.log(footer.debug());
     expect(footer.find('h1').text()).toEqual('Contact Us');
   });

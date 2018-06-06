@@ -7,9 +7,9 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 describe('Heading', () => {
-  let heading = mount(<Heading />);
+  const heading = mount(<Heading />);
 
-  it('renders the heading text', () => {
+  it('renders the data store heading', () => {
     // console.log(footer.debug());
     expect(heading.find('h1').text()).toEqual('Welcome to the Data Store');
   });

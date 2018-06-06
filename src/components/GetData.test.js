@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() });
 describe('GetData', () => {
   let getdata = mount(<GetData />);
 
-  it('renders without crashing', () => {
+  it('renders', () => {
     const div = document.createElement('div');
     ReactDOM.render(<GetData />, div);
     ReactDOM.unmountComponentAtNode(div);

@@ -10,7 +10,6 @@ describe('UserNames', () => {
   let usernames = mount(<UserNames />);
 
   it('renders the usernames text', () => {
-    // console.log(footer.debug());
-    expect(usernames.find('h1').text()).toEqual('Welcome to the Data Store');
+    console.log(usernames.debug());
   });
 });
