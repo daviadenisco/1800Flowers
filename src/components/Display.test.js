@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
-describe('Display', () => {
+describe('Display', (props) => {
   let display = mount(<Display />);
 
   it('renders', () => {

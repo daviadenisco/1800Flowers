@@ -1,12 +1,22 @@
-import { SET_STACK } from '../actions';
+import { LOAD_USERS, SET_USER } from '../actions';
+import { combineReducers } from 'redux';
 
-function stack(state = {}, action) {
+function users(state = [], action) {
   switch (action.type) {
-    case "SET_STACK":
-      return action.stack;
+    case "LOAD_USERS":
+      return action.users;
       default:
         return state;
   }
 }
 
-export default stack;
+const user = (state = {}, action) => {
+  switch (action.type) {
+    case "SET_USER":
+      return action.user;
+      default:
+        return state;
+  }
+}
+
+export default combineReducers({users, user});
