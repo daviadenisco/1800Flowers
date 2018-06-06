@@ -1,4 +1,3 @@
-import { LOAD_USERS, SET_USER } from '../actions';
 import { combineReducers } from 'redux';
 
 function users(state = [], action) {
