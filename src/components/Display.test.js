@@ -1,12 +1,12 @@
 import React from 'react';
 import Enzyme from 'enzyme';
-import { shallow, mount, configure, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import Display from './Display';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
-describe('Display', (props) => {
+describe('Display', () => {
   let display = mount(<Display />);
 
   it('renders', () => {

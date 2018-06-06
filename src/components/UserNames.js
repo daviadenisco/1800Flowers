@@ -9,9 +9,8 @@ class UserNames extends Component {
       <div>
         {this.props.users.map(user => {
           return (
-            <div>
-              <div style={{display:'inline-block'}}>{user.first} {user.last}</div>
-              <button style={{display:'inline-block'}} onClick={() => this.props.setUser(user)}>Show Info</button>
+            <div key={user.id}>
+              <button style={{display:'inline-block'}} onClick={() => this.props.setUser(user)}>{user.first} {user.last}</button>
             </div>
           )}
         )}

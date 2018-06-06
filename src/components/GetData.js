@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import '../App/App.css';
+import '../index.css';
 import Display from './Display';
 import UserNames from './UserNames';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../App/App.css';
+import '../index.css';
 
 class Display extends Component {
 

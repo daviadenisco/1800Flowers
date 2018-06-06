@@ -1,6 +1,6 @@
 import React from 'react';
 import Enzyme from 'enzyme';
-import { shallow, mount, configure, render } from 'enzyme';
+import { configure, mount, render } from 'enzyme';
 import Heading from './Heading';
 import Adapter from 'enzyme-adapter-react-16';
 
