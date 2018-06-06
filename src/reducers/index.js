@@ -6,17 +6,17 @@ function users(state = [], action) {
     case "LOAD_USERS":
       return action.users;
       default:
-        return {...state};
+        return state;
   }
 }
 
-const info = (state = {}, action) => {
+const user = (state = {}, action) => {
   switch (action.type) {
     case "SET_USER":
       return action.user;
       default:
-        return {...state};
+        return state;
   }
 }
 
-export default combineReducers({users, info});
+export default combineReducers({users, user});

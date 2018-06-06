@@ -6,7 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import rootReducer from './reducers';
 import './index.css';
 import Heading from './components/Heading';
-import App from './App/App.js';
+import GetData from './components/GetData.js';
 import Footer from './components/Footer';
 import Stack from './App/Stack.js';
 import { loadUsers } from './actions';
@@ -20,7 +20,7 @@ ReactDOM.render(
   <Provider store={store} >
     <div>
       <Heading />
-      <App />
+      <GetData />
       <Footer />
     </div>
   </Provider>

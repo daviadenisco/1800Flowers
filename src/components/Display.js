@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../App/App.css';
-//do imports
-
 
 class Display extends Component {
 
-  render(props) {
-
+  render() {
     return (
       <div>
         <li className='firstNlast'>{this.props.user.first} {this.props.user.last}</li>
@@ -18,7 +16,8 @@ class Display extends Component {
   }
 }
 
-// map state to mapStateToProps
+const mapStateToProps = (state) => {
+  return {user: state.user};
+}
 
-// connect to the store
-export default Display;
+export default connect(mapStateToProps)(Display);

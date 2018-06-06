@@ -7,16 +7,11 @@ import UserNames from './UserNames';
 
 class GetData extends Component {
 
-
   render() {
-    const display = this.props.user
-      ? <Display user={this.props.user} />
-      : null
-
     return (
       <div>
         <UserNames users={this.props.users}/>
-        {display}
+        <Display />
       </div>
     );
   }
